@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/pre-dexed/debug/classes-013134b98f97d0a8933f07cde6d7a55b807cb122.jar" />
+    </item>
+    <item
+        jar="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4a135d56554069e5d0ff80e3220e887e57146ee5">
+        <dex dex="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/pre-dexed/debug/classes-622e09d04dce7f90139dbe6a135975bfcb73f59d.jar" />
+    </item>
+    <item
+        jar="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-2bb3543935ce7e6028bec254a7b08efdd2cbfb66.jar" />
+    </item>
+    <item
+        jar="/Users/demo/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-d3cd75cd0b7d8b6b18c87d1bab352ecf30ee980b.jar" />
+    </item>
+    <item
+        jar="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="cb6fab7a71fa9ec1f483d44c5fca65ab469d8aca">
+        <dex dex="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/pre-dexed/debug/classes-aba2a5499c2f4fd8d9b331ae7dae79bc1313e241.jar" />
+    </item>
+    <item
+        jar="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/pre-dexed/debug/classes-beddc68d2f9a30b2a4ad4c9fea907492804809b0.jar" />
+    </item>
+    <item
+        jar="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/pre-dexed/debug/classes-5dc53f5129b6df14459da0ab124a8d1a65826d71.jar" />
+    </item>
+    <item
+        jar="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/demo/AndroidStudioProjects/Maps/app/build/intermediates/pre-dexed/debug/classes-e0eb4f24a18cf16cd8bf795de70a0b5661bbd2e2.jar" />
+    </item>
+
+</items>
