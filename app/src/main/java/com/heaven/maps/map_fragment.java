@@ -1,17 +1,24 @@
 package com.heaven.maps;
 
+import android.location.Location;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
 /**
  * Created by Zion on 12/10/15.
  */
+
+
 public class map_fragment extends SupportMapFragment implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         GoogleMap.OnInfoWindowClickListener,
@@ -19,8 +26,22 @@ public class map_fragment extends SupportMapFragment implements GoogleApiClient.
         GoogleMap.OnMapClickListener,
         GoogleMap.OnMarkerClickListener {
 
+
+    private GoogleApiClient mGoogleApiClient;
+    private Location mCurrentLocation;
+
+    private final int[] MAP_TYPES = { GoogleMap.MAP_TYPE_SATELLITE,
+            GoogleMap.MAP_TYPE_NORMAL
+    };
+    private int curMapTypeIndex = 0;
+
     @Override
     public void onConnected(Bundle bundle) {
+        mCurrentLocation = LocationServices
+                .FusedLocationApi
+                .getLastLocation( mGoogleApiClient );
+
+        initCamera(mCurrentLocation);
 
     }
 
@@ -53,5 +74,59 @@ public class map_fragment extends SupportMapFragment implements GoogleApiClient.
     public boolean onMarkerClick(Marker marker) {
         return false;
     }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        setHasOptionsMenu(true);
+
+        mGoogleApiClient = new GoogleApiClient.Builder( getActivity() )
+                .addConnectionCallbacks( this )
+                .addOnConnectionFailedListener( this )
+                .addApi( LocationServices.API )
+                .build();
+
+        initListeners();
+    }
+
+    private void initListeners() {
+        getMap().setOnMarkerClickListener(this);
+        getMap().setOnMapLongClickListener(this);
+        getMap().setOnInfoWindowClickListener(this);
+        getMap().setOnMapClickListener(this);
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        mGoogleApiClient.connect();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if( mGoogleApiClient != null && mGoogleApiClient.isConnected() ) {
+            mGoogleApiClient.disconnect();
+        }
+    }
+
+    private void initCamera( Location location ) {
+        CameraPosition position = CameraPosition.builder()
+                .target( new LatLng(location.getLatitude(),
+                        location.getLongitude() ) )
+                .zoom( 16f )
+                .bearing( 0.0f )
+                .tilt(0.0f)
+                .build();
+
+        getMap().animateCamera( CameraUpdateFactory
+                .newCameraPosition(position), null );
+
+        getMap().setMapType( MAP_TYPES[curMapTypeIndex] );
+        getMap().setTrafficEnabled( true );
+        getMap().setMyLocationEnabled( true );
+        getMap().getUiSettings().setZoomControlsEnabled(true);
+    }
+
 }
 
